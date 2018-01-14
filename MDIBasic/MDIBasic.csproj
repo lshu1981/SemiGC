@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F53D852E-EA85-404A-B865-7A00EFCD28AF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LSSCADA</RootNamespace>
+    <AssemblyName>MDIBasic</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>LSSCADA.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>自由缩放1.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph">
+      <HintPath>H:\微云网盘\zedgraph_dll_v515\zedgraph_dll_v5.1.5\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CCONST.cs" />
+    <Compile Include="Communication\CDAModule.cs" />
+    <Compile Include="Communication\CDevice.cs" />
+    <Compile Include="Communication\CommManager.cs" />
+    <Compile Include="Communication\CPort.cs" />
+    <Compile Include="Communication\CPortSerial.cs" />
+    <Compile Include="Communication\CPortTCP.cs" />
+    <Compile Include="Communication\CProtcolMOCVD.cs" />
+    <Compile Include="Communication\CProtcolModbusRTU.cs" />
+    <Compile Include="Communication\CProtcolModbusTCP.cs" />
+    <Compile Include="Communication\CProtcolPLC.cs" />
+    <Compile Include="Communication\CProtcolTCP.cs" />
+    <Compile Include="Communication\CProtcolTran.cs" />
+    <Compile Include="Communication\CRC.cs" />
+    <Compile Include="Communication\CStation.cs" />
+    <Compile Include="Communication\CVar.cs" />
+    <Compile Include="Communication\Modbus报文查看.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Communication\Modbus报文查看.Designer.cs">
+      <DependentUpon>Modbus报文查看.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\CLSChart.cs" />
+    <Compile Include="Control\CLSCurve.cs" />
+    <Compile Include="Control\CLSTeamCurve.cs" />
+    <Compile Include="Control\CLSYAxisGroup.cs" />
+    <Compile Include="Control\frmAlarmList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\frmAlarmList.Designer.cs">
+      <DependentUpon>frmAlarmList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\frmC曲线刻度设置.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\frmC曲线刻度设置.Designer.cs">
+      <DependentUpon>frmC曲线刻度设置.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\frmC配方List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\frmC配方List.Designer.cs">
+      <DependentUpon>frmC配方List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\frmCComm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\frmCComm.Designer.cs">
+      <DependentUpon>frmCComm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\frmC曲线选择变量.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\frmC曲线选择变量.Designer.cs">
+      <DependentUpon>frmC曲线选择变量.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\frmC机械手密码.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\frmC机械手密码.Designer.cs">
+      <DependentUpon>frmC机械手密码.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\frmC机械手设置.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\frmC机械手设置.Designer.cs">
+      <DependentUpon>frmC机械手设置.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\frmC温度控制.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\frmC温度控制.Designer.cs">
+      <DependentUpon>frmC温度控制.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\frmC生长室维护.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\frmC生长室维护.Designer.cs">
+      <DependentUpon>frmC生长室维护.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Database\MySqlPublic.cs" />
+    <Compile Include="PublicDll.cs" />
+    <Compile Include="User\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\frmC机械手控制.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\frmC机械手控制.Designer.cs">
+      <DependentUpon>frmC机械手控制.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\frmPubInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\frmPubInput.Designer.cs">
+      <DependentUpon>frmPubInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\frm设置.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\frm设置.Designer.cs">
+      <DependentUpon>frm设置.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Communication\CAlarm.cs" />
+    <Compile Include="Control\RealtimeTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\RealtimeTable.Designer.cs">
+      <DependentUpon>RealtimeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\frmC数据监视.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\frmC数据监视.Designer.cs">
+      <DependentUpon>frmC数据监视.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\frmC报表维护.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\frmC报表维护.Designer.cs">
+      <DependentUpon>frmC报表维护.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\frmC报警.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\frmC报警.Designer.cs">
+      <DependentUpon>frmC报警.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\CUserInfo.cs" />
+    <Compile Include="Database\LSDatabase.cs" />
+    <Compile Include="MOCVDClass.cs" />
+    <Compile Include="CProject.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TuYuan\Form.cs" />
+    <Compile Include="TuYuan\Group.cs" />
+    <Compile Include="TuYuan\ImageControl.cs" />
+    <Compile Include="TuYuan\KJIcon.cs" />
+    <Compile Include="TuYuan\KJRuler.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TuYuan\NumUpDown.cs" />
+    <Compile Include="TuYuan\Pipe.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TuYuan\Rectangle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TuYuan\Ring.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TuYuan\BaseUnit.cs" />
+    <Compile Include="TuYuan\Expression.cs" />
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChild.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChild.Designer.cs">
+      <DependentUpon>frmChild.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TuYuan\CEllips.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TuYuan\Line.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TuYuan\Text.cs" />
+    <Compile Include="TuYuan\TuYuan.cs" />
+    <Compile Include="User\frmUserAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\frmUserAdd.Designer.cs">
+      <DependentUpon>frmUserAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\frmUserManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\frmUserManage.Designer.cs">
+      <DependentUpon>frmUserManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\frmUserPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\frmUserPassword.Designer.cs">
+      <DependentUpon>frmUserPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\frmC机械手.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\frmC机械手.Designer.cs">
+      <DependentUpon>frmC机械手.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Communication\Modbus报文查看.resx">
+      <DependentUpon>Modbus报文查看.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\frmAlarmList.resx">
+      <DependentUpon>frmAlarmList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\frmC曲线刻度设置.resx">
+      <DependentUpon>frmC曲线刻度设置.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\frmC配方List.resx">
+      <DependentUpon>frmC配方List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\frmCComm.resx">
+      <DependentUpon>frmCComm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\frmC曲线选择变量.resx">
+      <DependentUpon>frmC曲线选择变量.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\frmC机械手密码.resx">
+      <DependentUpon>frmC机械手密码.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\frmC机械手设置.resx">
+      <DependentUpon>frmC机械手设置.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\frmC温度控制.resx">
+      <DependentUpon>frmC温度控制.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\frmC生长室维护.resx">
+      <DependentUpon>frmC生长室维护.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\frmC机械手控制.resx">
+      <DependentUpon>frmC机械手控制.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\frmPubInput.resx">
+      <DependentUpon>frmPubInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\frm设置.resx">
+      <DependentUpon>frm设置.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\RealtimeTable.resx">
+      <DependentUpon>RealtimeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\frmC数据监视.resx">
+      <DependentUpon>frmC数据监视.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\frmC报表维护.resx">
+      <DependentUpon>frmC报表维护.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\frmC报警.resx">
+      <DependentUpon>frmC报警.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChild.resx">
+      <DependentUpon>frmChild.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\frmC机械手.resx">
+      <DependentUpon>frmC机械手.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\frmUserAdd.resx">
+      <DependentUpon>frmUserAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\frmUserManage.resx">
+      <DependentUpon>frmUserManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\frmUserPassword.resx">
+      <DependentUpon>frmUserPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\CPort.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CABC\CABC.csproj">
+      <Project>{b9bf1079-1bc0-4457-bddd-e69e3c724e6f}</Project>
+      <Name>CABC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CWLReport\CWLReport.csproj">
+      <Project>{47845cd8-b63e-4ac4-a0fc-9af9491d3234}</Project>
+      <Name>CWLReport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExpressionParser\ExpressionParser.csproj">
+      <Project>{41BB0BCA-A08E-4848-8667-92786B07A22B}</Project>
+      <Name>ExpressionParser</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.3.5">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 3.5 SP2</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\流量计y.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\流量计x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\流量计h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\阀门h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\阀门l.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\蓝色H.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\蓝色S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sound00.png" />
+    <None Include="Resources\Sound55.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="2014011802531925_easyicon_net_128.ico" />
+    <Content Include="自由缩放1.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
